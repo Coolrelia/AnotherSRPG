@@ -12,8 +12,11 @@ public class Tile : MonoBehaviour
 
     public Sprite tile;
     public Sprite highlightedTile;
+
     public bool isWalkable;
     GameMaster gm;
+
+    public int cost;
 
     private void Start()
     {

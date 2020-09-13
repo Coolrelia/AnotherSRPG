@@ -7,7 +7,7 @@ public class Unit : MonoBehaviour
     public bool selected;
     GameMaster gm;
 
-    public int tileSpeed;
+    public int move;
     public bool hasMoved;
 
     public float moveSpeed;
@@ -48,7 +48,7 @@ public class Unit : MonoBehaviour
         }
         foreach (Tile tile in FindObjectsOfType<Tile>())
         {
-            if (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y) <= tileSpeed)
+            if (Mathf.Abs(transform.position.x - (tile.transform.position.x + tile.cost)) + Mathf.Abs(transform.position.y - (tile.transform.position.y + tile.cost)) <= move)
             {
                 if(tile.IsClear() == true)
                 {
