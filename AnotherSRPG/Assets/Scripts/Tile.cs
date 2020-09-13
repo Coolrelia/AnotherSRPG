@@ -15,22 +15,10 @@ public class Tile : MonoBehaviour
 
     public bool isWalkable;
     GameMaster gm;
-
-    public int cost;
-
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         gm = FindObjectOfType<GameMaster>();
-    }
-
-    private void OnMouseEnter()
-    {
-        transform.localScale += Vector3.one * hoverAmount;
-    }
-    private void OnMouseExit()
-    {
-        transform.localScale -= Vector3.one * hoverAmount;
     }
 
     public bool IsClear()
