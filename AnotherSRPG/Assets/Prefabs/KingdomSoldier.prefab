@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2088762373
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 8760199315114398310, guid: 4fad2b09197151b4fbbe7d09da44c9c3,
     type: 3}
@@ -101,12 +101,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+  stat: {fileID: 0}
   equippedWeapon: {fileID: 0}
   ally: 0
   hasAttacked: 0
   hasMoved: 0
   moveSpeed: 5
   attackableIcon: {fileID: 7918914411337566543}
+  explosion: {fileID: 6674798612478768392, guid: 804a583b52945a64d87ea5e0474cf0b2,
+    type: 3}
 --- !u!114 &7090657975417367644
 MonoBehaviour:
   m_ObjectHideFlags: 0

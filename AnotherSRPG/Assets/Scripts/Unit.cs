@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
     public bool selected;
     GameMaster gm;
-    Stats stat;
+    public Stats stat;
 
     public Weapon equippedWeapon;
 
@@ -20,6 +21,7 @@ public class Unit : MonoBehaviour
     public float moveSpeed;
 
     public GameObject attackableIcon;
+    public GameObject explosion;
 
     private void Start()
     {
@@ -31,6 +33,14 @@ public class Unit : MonoBehaviour
         stat.hit = equippedWeapon.hit + ((stat.skill * 3 + stat.luck) / 2);
         stat.crit = equippedWeapon.crit + (stat.skill / 2);
         stat.avoid = (stat.speed * 3 + stat.luck) / 2;
+    }
+
+    private void OnMouseOver()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            gm.ToggleStatsPanel(this);
+        }
     }
 
     private void OnMouseDown()
@@ -74,7 +84,54 @@ public class Unit : MonoBehaviour
 
     void Attack(Unit enemy)
     {
-        
+        hasAttacked = true;
+
+        int enemyDamage = stat.attack - enemy.stat.defense;
+        int myDamage = enemy.stat.attack - stat.defense;
+
+        if (enemyDamage >= 1)
+        {
+            Instantiate(explosion, enemy.transform.position, Quaternion.identity);
+            enemy.stat.health -= enemyDamage;
+        }
+
+        if (transform.tag == "Ranged" && enemy.tag != "Ranged")
+        {
+            if (Mathf.Abs(transform.position.x - enemy.transform.position.x) + Mathf.Abs(transform.position.y - enemy.transform.position.y) <= 1)
+            {
+                if (myDamage >= 1)
+                {
+                    Instantiate(explosion, transform.position, Quaternion.identity);
+                    stat.health -= myDamage;
+                }
+            }
+        }
+        else
+        {
+            if (myDamage >= 1)
+            {
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                stat.health -= myDamage;
+            }
+        }
+
+        if(enemy.stat.health <= 0)
+        {
+            gm.enemyUnits.Remove(enemy);
+            Destroy(enemy.gameObject);
+            GetWalkableTiles();
+            gm.RemoveStatsPanel(enemy);
+        }
+
+        if(stat.health <= 0)
+        {
+            gm.alliedUnits.Remove(this);
+            gm.ResetTiles();
+            gm.RemoveStatsPanel(this);
+            Destroy(this.gameObject);
+        }
+
+        gm.UpdateStatsPanel();
     }
 
     void GetWalkableTiles()
@@ -145,5 +202,6 @@ public class Unit : MonoBehaviour
         hasMoved = true;
         ResetAttackableIcons();
         GetEnemies();
+        gm.MoveStatsPanel(this);
     }
 }
