@@ -21,11 +21,12 @@ public class Unit : MonoBehaviour
     public float moveSpeed;
 
     public GameObject attackableIcon;
-    public GameObject explosion;
+    BattleManager bm;
 
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
+        bm = FindObjectOfType<BattleManager>();
         stat = GetComponent<Stats>();
 
         //Sets your combat stats 
@@ -77,12 +78,12 @@ public class Unit : MonoBehaviour
         {
             if(gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
             {
-                gm.selectedUnit.Attack(unit);
+                gm.selectedUnit.bm.Combat(gm.selectedUnit, unit);
             }
         }
     }
 
-    void Attack(Unit enemy)
+    /*void Attack(Unit enemy)
     {
         hasAttacked = true;
 
@@ -133,6 +134,9 @@ public class Unit : MonoBehaviour
 
         gm.UpdateStatsPanel();
     }
+    */
+    
+
 
     void GetWalkableTiles()
     {
