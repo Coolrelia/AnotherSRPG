@@ -153,4 +153,18 @@ public class Unit : MonoBehaviour
         GetEnemies();
         gm.MoveStatsPanel(this);
     }
+
+    private void LevelUp()
+    {
+        if(stat.experience >= 100)
+        {
+            stat.level += 1;
+            stat.experience = 0;
+        }
+    }
+
+    private void GainExperience(int experience)
+    {
+        stat.experience += experience;
+    }
 }
