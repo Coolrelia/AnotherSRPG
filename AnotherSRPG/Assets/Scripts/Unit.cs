@@ -83,61 +83,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    /*void Attack(Unit enemy)
-    {
-        hasAttacked = true;
-
-        int enemyDamage = stat.attack - enemy.stat.defense;
-        int myDamage = enemy.stat.attack - stat.defense;
-
-        if (enemyDamage >= 1)
-        {
-            Instantiate(explosion, enemy.transform.position, Quaternion.identity);
-            enemy.stat.health -= enemyDamage;
-        }
-
-        if (transform.tag == "Ranged" && enemy.tag != "Ranged")
-        {
-            if (Mathf.Abs(transform.position.x - enemy.transform.position.x) + Mathf.Abs(transform.position.y - enemy.transform.position.y) <= 1)
-            {
-                if (myDamage >= 1)
-                {
-                    Instantiate(explosion, transform.position, Quaternion.identity);
-                    stat.health -= myDamage;
-                }
-            }
-        }
-        else
-        {
-            if (myDamage >= 1)
-            {
-                Instantiate(explosion, transform.position, Quaternion.identity);
-                stat.health -= myDamage;
-            }
-        }
-
-        if(enemy.stat.health <= 0)
-        {
-            gm.enemyUnits.Remove(enemy);
-            Destroy(enemy.gameObject);
-            GetWalkableTiles();
-            gm.RemoveStatsPanel(enemy);
-        }
-
-        if(stat.health <= 0)
-        {
-            gm.alliedUnits.Remove(this);
-            gm.ResetTiles();
-            gm.RemoveStatsPanel(this);
-            Destroy(this.gameObject);
-        }
-
-        gm.UpdateStatsPanel();
-    }
-    */
-    
-
-
     void GetWalkableTiles()
     {
         if(hasMoved == true)

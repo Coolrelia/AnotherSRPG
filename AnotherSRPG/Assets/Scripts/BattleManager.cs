@@ -17,20 +17,64 @@ public class BattleManager : MonoBehaviour
         initiator.hasAttacked = true;
 
         int initiatorDamage = initiator.stat.attack - receiver.stat.defense;
+        int counterAttackDamage = receiver.stat.attack - initiator.stat.defense;
 
-        if(initiatorDamage >= 1)
+        if (initiator.transform.tag == "Ranged" && receiver.tag != "Ranged")
         {
-            outgoingText.text = initiator.name + " attacked    " + initiatorDamage.ToString() + " Damage";
-            TextBox();
-            Instantiate(explosion, receiver.transform.position, Quaternion.identity);
-            receiver.stat.health -= initiatorDamage;
+            if (Mathf.Abs(initiator.transform.position.x - receiver.transform.position.x) + Mathf.Abs(initiator.transform.position.y - receiver.transform.position.y) <= 1)
+            {
+                if (initiatorDamage >= 1)
+                {
+                    outgoingText.text = initiator.name + " attacked ... They dealt " + initiatorDamage.ToString() + " Damage";
+                    TextBox();
+                    Instantiate(explosion, receiver.transform.position, Quaternion.identity);
+                    receiver.stat.health -= initiatorDamage;
+                }
+            }
+            else
+            {
+                if (initiatorDamage >= 1)
+                {
+                    outgoingText.text = initiator.name + " attacked ... They dealt " + initiatorDamage.ToString() + " Damage";
+                    TextBox();
+                    Instantiate(explosion, receiver.transform.position, Quaternion.identity);
+                    receiver.stat.health -= initiatorDamage;
+                    return;
+                }
+            }
+        }
+        else
+        {
+            if (initiatorDamage >= 1)
+            {
+                outgoingText.text = initiator.name + " attacked ... They dealt " + initiatorDamage.ToString() + " Damage";
+                TextBox();
+                Instantiate(explosion, receiver.transform.position, Quaternion.identity);
+                receiver.stat.health -= initiatorDamage;
+            }
+        }
+
+        if (initiator.stat.health <= 0 || receiver.stat.health <= 0)
+        {
+            return;
+        }
+
+        if (receiver.stat.health >= 1)
+        {
+            if (counterAttackDamage >= 1)
+            {
+                incomingText.text = receiver.name + " retaliated ... They dealt " + counterAttackDamage.ToString() + " Damage";
+                TextBox();
+                Instantiate(explosion, initiator.transform.position, Quaternion.identity);
+                initiator.stat.health -= counterAttackDamage;
+            }
         }
     }
 
     void TextBox()
     {
         TextBoxEnter();
-        Invoke("TextBoxExit", 5);
+        Invoke("TextBoxExit", 4);
     }
 
     void TextBoxEnter()
@@ -41,6 +85,6 @@ public class BattleManager : MonoBehaviour
     void TextBoxExit()
     {
         anim.SetTrigger("Exit");
-        outgoingText.text = "";
     }
 }
+

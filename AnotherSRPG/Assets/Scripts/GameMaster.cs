@@ -48,6 +48,23 @@ public class GameMaster : MonoBehaviour
 
     private void Update()
     {
+        foreach(Unit unit in FindObjectsOfType<Unit>())
+        {
+            if(unit.stat.health <= 0)
+            {
+                if (unit.ally == true)
+                {
+                    alliedUnits.Remove(unit);
+                    Destroy(unit.gameObject);
+                }
+                else
+                {
+                    enemyUnits.Remove(unit);
+                    Destroy(unit.gameObject);
+                }
+            }
+        }
+
         turnNumberText.text = turnNumber.ToString();
 
         if (turnNumber == 2)
