@@ -18,7 +18,6 @@ public class Stats : MonoBehaviour
     public int skill;
     public int defense;
     public int resistance;
-    public int luck;
     public int speed;
     public int movement;
 }

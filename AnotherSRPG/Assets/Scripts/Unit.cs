@@ -31,9 +31,9 @@ public class Unit : MonoBehaviour
 
         //Sets your combat stats 
         stat.attack = stat.strength + equippedWeapon.might;
-        stat.hit = equippedWeapon.hit + ((stat.skill * 3 + stat.luck) / 2);
+        stat.hit = equippedWeapon.hit + ((stat.skill * 3) / 2);
         stat.crit = equippedWeapon.crit + (stat.skill / 2);
-        stat.avoid = (stat.speed * 3 + stat.luck) / 2;
+        stat.avoid = (stat.speed * 3) / 2;
     }
 
     private void OnMouseOver()
