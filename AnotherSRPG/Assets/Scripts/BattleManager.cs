@@ -92,6 +92,8 @@ public class BattleManager : MonoBehaviour
     void TextBoxExit()
     {
         anim.SetTrigger("Exit");
+        outgoingText.text = "";
+        incomingText.text = "";
     }
 }
 
