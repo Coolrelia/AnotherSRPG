@@ -18,8 +18,6 @@ public class CursorController : MonoBehaviour
 
     private void Update()
     {
-        pos.z = -8;
-
         if(pos.x >= leftMostTile + 1)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -55,10 +53,5 @@ public class CursorController : MonoBehaviour
                 transform.position = pos;
             }
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D unit)
-    {
-        Debug.Log("Detected");
     }
 }

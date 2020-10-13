@@ -915,7 +915,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991884, guid: de135603233575f49befb39e54f4b790,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991884, guid: de135603233575f49befb39e54f4b790,
         type: 3}
@@ -7105,7 +7105,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -7151,6 +7151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KingdomSoldier (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918914411337566543, guid: 0f21ad539a9e12a47895177c88496460,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f21ad539a9e12a47895177c88496460, type: 3}
@@ -8104,7 +8109,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -8283,11 +8288,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869438920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1622437734}
   - {fileID: 1234587788}
+  - {fileID: 1111250866}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10443,7 +10449,7 @@ GameObject:
   - component: {fileID: 1111250868}
   m_Layer: 0
   m_Name: Cursor
-  m_TagString: Untagged
+  m_TagString: Cursor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10506,11 +10512,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111250864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -8}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 869438921}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1111250867
 MonoBehaviour:
@@ -12237,11 +12243,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6797449150549991882, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
-      propertyPath: attackRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6797449150549991882, guid: 0f21ad539a9e12a47895177c88496460,
-        type: 3}
       propertyPath: equippedWeapon
       value: 
       objectReference: {fileID: 1542856415}
@@ -12258,7 +12259,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -12300,35 +12301,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6797449150549991885, guid: 0f21ad539a9e12a47895177c88496460,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 2088762373
-      objectReference: {fileID: 0}
-    - target: {fileID: 6797449150549991885, guid: 0f21ad539a9e12a47895177c88496460,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991886, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_Name
       value: KingdomSoldier (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7918914411337566543, guid: 0f21ad539a9e12a47895177c88496460,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f21ad539a9e12a47895177c88496460, type: 3}
@@ -16130,7 +16106,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -19004,7 +18980,7 @@ PrefabInstance:
     - target: {fileID: 297210538870397912, guid: 32dd223fd6937714b875c02aad3cb01c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 297210538870397912, guid: 32dd223fd6937714b875c02aad3cb01c,
         type: 3}
@@ -19105,7 +19081,7 @@ PrefabInstance:
     - target: {fileID: 4219236001221071638, guid: a9ba57a171c6d874a885b4ab63bbc0c7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4219236001221071638, guid: a9ba57a171c6d874a885b4ab63bbc0c7,
         type: 3}
@@ -19189,7 +19165,7 @@ PrefabInstance:
     - target: {fileID: 5330368163551940526, guid: b25f1ca0c490de240b2afd4a23c002fc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5330368163551940526, guid: b25f1ca0c490de240b2afd4a23c002fc,
         type: 3}
@@ -19250,6 +19226,11 @@ PrefabInstance:
       propertyPath: equippedWeapon
       value: 
       objectReference: {fileID: 1542856415}
+    - target: {fileID: 5673569529789369512, guid: d705dfb3fd2faed4aa22994d9a297bcf,
+        type: 3}
+      propertyPath: cursorObject
+      value: 
+      objectReference: {fileID: 1111250864}
     - target: {fileID: 5673569529789369515, guid: d705dfb3fd2faed4aa22994d9a297bcf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19263,7 +19244,7 @@ PrefabInstance:
     - target: {fileID: 5673569529789369515, guid: d705dfb3fd2faed4aa22994d9a297bcf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673569529789369515, guid: d705dfb3fd2faed4aa22994d9a297bcf,
         type: 3}
@@ -19310,11 +19291,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: YoungRoland
       objectReference: {fileID: 0}
-    - target: {fileID: 5673569529789369517, guid: d705dfb3fd2faed4aa22994d9a297bcf,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d705dfb3fd2faed4aa22994d9a297bcf, type: 3}
 --- !u!1001 &6797449150426609167
@@ -19342,7 +19318,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6797449150549991884, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -19388,6 +19364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KingdomSoldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918914411337566543, guid: 0f21ad539a9e12a47895177c88496460,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f21ad539a9e12a47895177c88496460, type: 3}

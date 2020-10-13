@@ -23,10 +23,13 @@ public class Unit : MonoBehaviour
     public GameObject attackableIcon;
     BattleManager bm;
 
+    public GameObject cursorObject;
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
         bm = FindObjectOfType<BattleManager>();
+        cursorObject = GameObject.FindGameObjectWithTag("Cursor");
         stat = GetComponent<Stats>();
 
         //Sets your combat stats 
@@ -36,15 +39,30 @@ public class Unit : MonoBehaviour
         stat.avoid = (stat.speed * 3) / 2;
     }
 
-    private void OnMouseOver()
+    private void Update()
     {
-        if(Input.GetMouseButtonDown(1))
+        if(cursorObject.transform.position == transform.position)
         {
-            gm.ToggleStatsPanel(this);
+            if(Input.GetKeyDown(KeyCode.C))
+            {
+                CheckStats();
+            }
+        }
+        if (cursorObject.transform.position == transform.position)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Selected();
+            }
         }
     }
 
-    private void OnMouseDown()
+    private void CheckStats()
+    {
+        gm.ToggleStatsPanel(this);
+    }
+
+    private void Selected()
     {
         ResetAttackableIcons();
 
@@ -72,13 +90,19 @@ public class Unit : MonoBehaviour
             }
         }
 
-        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.15f);
+        Collider2D col = Physics2D.OverlapCircle(cursorObject.transform.position, 0.15f);
         Unit unit = col.GetComponent<Unit>();
         if(gm.selectedUnit != null)
         {
             if(gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
             {
-                gm.selectedUnit.bm.Combat(gm.selectedUnit, unit);
+                if(cursorObject.transform.position == unit.transform.position)
+                {
+                    if(Input.GetKeyDown(KeyCode.Space))
+                    {
+                        gm.selectedUnit.bm.Combat(gm.selectedUnit, unit);
+                    }
+                }
             }
         }
     }

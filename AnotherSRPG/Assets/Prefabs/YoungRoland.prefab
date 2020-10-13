@@ -214,8 +214,7 @@ MonoBehaviour:
   hasMoved: 0
   moveSpeed: 5
   attackableIcon: {fileID: 1044127680}
-  explosion: {fileID: 6674798612478768392, guid: 804a583b52945a64d87ea5e0474cf0b2,
-    type: 3}
+  cursorObject: {fileID: 0}
 --- !u!114 &2572267495920348905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +239,6 @@ MonoBehaviour:
   skill: 3
   defense: 4
   resistance: 2
-  luck: 1
   speed: 3
   movement: 3
 --- !u!114 &1375399736177071929

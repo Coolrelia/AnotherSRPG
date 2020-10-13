@@ -15,10 +15,19 @@ public class Tile : MonoBehaviour
 
     public bool isWalkable;
     GameMaster gm;
+
+    public GameObject cursorObject;
+
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         gm = FindObjectOfType<GameMaster>();
+        cursorObject = GameObject.FindGameObjectWithTag("Cursor");
+    }
+
+    private void Update()
+    {
+        TileSelected();
     }
 
     public bool IsClear()
@@ -46,11 +55,18 @@ public class Tile : MonoBehaviour
         isWalkable = false;
     }
 
-    void OnMouseDown()
+    void TileSelected()
     {
-        if(isWalkable == true && gm.selectedUnit != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            gm.selectedUnit.Move(this.transform.position);
+            if (cursorObject.transform.position.x == transform.position.x
+                && cursorObject.transform.position.y == transform.position.y)
+            {
+                if (isWalkable == true && gm.selectedUnit != null)
+                {
+                    gm.selectedUnit.Move(this.transform.position);
+                }
+            }
         }
     }
 }
