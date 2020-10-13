@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781606726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.83333325, y: 0.83333325, z: 1}
   m_Children: []
   m_Father: {fileID: 4219236001221071638}
@@ -188,8 +188,7 @@ MonoBehaviour:
   hasMoved: 0
   moveSpeed: 5
   attackableIcon: {fileID: 781606726}
-  explosion: {fileID: 6674798612478768392, guid: 804a583b52945a64d87ea5e0474cf0b2,
-    type: 3}
+  cursorObject: {fileID: 0}
 --- !u!114 &2992067677762795414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +213,6 @@ MonoBehaviour:
   skill: 2
   defense: 2
   resistance: 2
-  luck: 2
   speed: 5
   movement: 4
 --- !u!61 &4219236001221071659

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106893023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 297210538870397912}
@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &297210538870397912
 Transform:
   m_ObjectHideFlags: 0
@@ -214,8 +214,7 @@ MonoBehaviour:
   hasMoved: 0
   moveSpeed: 5
   attackableIcon: {fileID: 106893023}
-  explosion: {fileID: 6674798612478768392, guid: 804a583b52945a64d87ea5e0474cf0b2,
-    type: 3}
+  cursorObject: {fileID: 0}
 --- !u!114 &8631748124100620575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +239,6 @@ MonoBehaviour:
   skill: 3
   defense: 3
   resistance: 3
-  luck: 3
   speed: 4
   movement: 3
 --- !u!114 &8687329025178817161
