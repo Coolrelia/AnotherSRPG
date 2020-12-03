@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public int cost;
+
     private SpriteRenderer rend;
 
     public float hoverAmount;

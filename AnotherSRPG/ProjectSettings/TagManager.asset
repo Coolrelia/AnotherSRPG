@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ranged
   - Cursor
+  - Highlight
   layers:
   - Default
   - TransparentFX

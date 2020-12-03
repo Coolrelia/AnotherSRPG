@@ -12,6 +12,7 @@ public class GameMaster : MonoBehaviour
 
     public GameObject selectedUnitSquare;
 
+    public GameObject menuPanel;
     public GameObject statsPanel;
     public Vector2 statsPanelShift;
     public Unit viewedUnit;
@@ -22,6 +23,8 @@ public class GameMaster : MonoBehaviour
     public Text hitText;
     public Text critText;
     public Text avoidText;
+    public Text expText;
+    public Text levelText;
 
     public Text turnNumberText;
 
@@ -48,6 +51,18 @@ public class GameMaster : MonoBehaviour
 
     private void Update()
     {
+        if(allyTurn == true)
+        {
+            if(Input.GetKeyDown(KeyCode.M) && menuPanel.activeSelf == false)
+            {
+                menuPanel.SetActive(true);
+            }
+            else if(Input.GetKeyDown(KeyCode.M) && menuPanel.activeSelf == true)
+            {
+                menuPanel.SetActive(false);
+            }
+        }
+
         foreach(Unit unit in FindObjectsOfType<Unit>())
         {
             if(unit.stat.health <= 0)
@@ -66,16 +81,6 @@ public class GameMaster : MonoBehaviour
         }
 
         turnNumberText.text = turnNumber.ToString();
-
-        if (turnNumber == 2)
-        {
-            youngLeah.SetActive(true);
-        }
-
-        if(enemyUnits.Count <= 0)
-        {
-            ophelia.SetActive(true);
-        }
 
         if (selectedUnit != null)
         {
@@ -122,14 +127,8 @@ public class GameMaster : MonoBehaviour
             hitText.text = "Hit " + viewedUnit.stat.hit.ToString();
             critText.text = "Crit " + viewedUnit.stat.crit.ToString();
             avoidText.text = "Avo " + viewedUnit.stat.avoid.ToString();
-        }
-    }
-
-    public void MoveStatsPanel(Unit unit)
-    {
-        if(unit.Equals(viewedUnit))
-        {
-            statsPanel.transform.position = (Vector2)unit.transform.position + statsPanelShift;
+            expText.text = viewedUnit.stat.experience.ToString() + "/100";
+            levelText.text = viewedUnit.stat.level.ToString();
         }
     }
 
@@ -147,6 +146,7 @@ public class GameMaster : MonoBehaviour
         if(allyTurn == true)
         {
             allyTurn = false;
+            menuPanel.SetActive(false);
         }
         else if(allyTurn == false)
         {

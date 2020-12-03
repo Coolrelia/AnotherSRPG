@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
                     TextBox();
                     Instantiate(explosion, receiver.transform.position, Quaternion.identity);
                     receiver.stat.health -= initiatorDamage;
+                    initiator.stat.experience += receiver.stat.attackedExperience;
                 }
             }
             else
@@ -43,6 +44,7 @@ public class BattleManager : MonoBehaviour
                     TextBox();
                     Instantiate(explosion, receiver.transform.position, Quaternion.identity);
                     receiver.stat.health -= initiatorDamage;
+                    initiator.stat.experience += receiver.stat.attackedExperience;
                     return;
                 }
             }
@@ -56,6 +58,7 @@ public class BattleManager : MonoBehaviour
                 TextBox();
                 Instantiate(explosion, receiver.transform.position, Quaternion.identity);
                 receiver.stat.health -= initiatorDamage;
+                initiator.stat.experience += receiver.stat.attackedExperience;
             }
         }
 
@@ -81,7 +84,7 @@ public class BattleManager : MonoBehaviour
     void TextBox()
     {
         TextBoxEnter();
-        Invoke("TextBoxExit", 4);
+        Invoke("TextBoxExit", 2.5f);
     }
 
     void TextBoxEnter()

@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class HoverEffect : MonoBehaviour
 {
+    public GameObject cursorObject;
     public float hoverAmount;
 
-    private void OnMouseEnter()
+    private void Start()
     {
-        transform.localScale += Vector3.one * hoverAmount;
+        cursorObject = GameObject.FindGameObjectWithTag("Cursor");
     }
-    private void OnMouseExit()
+
+    public void Update()
     {
-        transform.localScale -= Vector3.one * hoverAmount;
+        CursorEnter();
+        CursorExit();
+    }
+
+    private void CursorEnter()
+    {
+        if(cursorObject.transform.position == transform.position)
+        {
+            transform.localScale += Vector3.one * hoverAmount;
+        }
+    }
+    private void CursorExit()
+    {
+        if (cursorObject.transform.position == transform.position)
+        {
+            transform.localScale -= Vector3.one * hoverAmount;
+        }
     }
 }

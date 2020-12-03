@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d72eeea3b0b9154c8fac12228ffcac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 1
   hoverAmount: 0.2
   obstacleLayer:
     serializedVersion: 2
@@ -102,7 +103,7 @@ MonoBehaviour:
   tile: {fileID: 21300000, guid: ea9bd9f8ac94fe9408751f06e6bb6905, type: 3}
   highlightedTile: {fileID: 21300000, guid: 5cce7c71c45b0c54a9ab01eb50d268d2, type: 3}
   isWalkable: 0
-  cost: 2
+  cursorObject: {fileID: 0}
 --- !u!61 &3085765849629745282
 BoxCollider2D:
   m_ObjectHideFlags: 0

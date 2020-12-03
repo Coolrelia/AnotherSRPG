@@ -41,6 +41,8 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
+        LevelUp();
+
         if(cursorObject.transform.position == transform.position)
         {
             if(Input.GetKeyDown(KeyCode.C))
@@ -89,16 +91,20 @@ public class Unit : MonoBehaviour
                 GetWalkableTiles();
             }
         }
+        Attack();
+    }
 
+    private void Attack()
+    {
         Collider2D col = Physics2D.OverlapCircle(cursorObject.transform.position, 0.15f);
         Unit unit = col.GetComponent<Unit>();
-        if(gm.selectedUnit != null)
+        if (gm.selectedUnit != null)
         {
-            if(gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
+            if (gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
             {
-                if(cursorObject.transform.position == unit.transform.position)
+                if (cursorObject.transform.position == unit.transform.position)
                 {
-                    if(Input.GetKeyDown(KeyCode.Space))
+                    if (Input.GetKeyDown(KeyCode.Space))
                     {
                         gm.selectedUnit.bm.Combat(gm.selectedUnit, unit);
                     }
@@ -115,7 +121,7 @@ public class Unit : MonoBehaviour
         }
         foreach (Tile tile in FindObjectsOfType<Tile>())
         {
-            if (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y) <= stat.movement)
+            if (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y) + tile.cost <= stat.movement)
             {
                 if(tile.IsClear() == true)
                 {
@@ -156,6 +162,11 @@ public class Unit : MonoBehaviour
         StartCoroutine(StartMovement(tilePos));
     }
 
+    public void EnemyMove(Vector2 tilePos)
+    {
+        StartCoroutine(StartMovement(tilePos));
+    }
+
     IEnumerator StartMovement(Vector2 tilePos)
     {
         while(transform.position.x != tilePos.x)
@@ -175,20 +186,52 @@ public class Unit : MonoBehaviour
         hasMoved = true;
         ResetAttackableIcons();
         GetEnemies();
-        gm.MoveStatsPanel(this);
     }
 
     private void LevelUp()
     {
         if(stat.experience >= 100)
         {
+            int excessExperience = stat.experience - 100;
             stat.level += 1;
-            stat.experience = 0;
-        }
-    }
+            stat.experience = excessExperience;
 
-    private void GainExperience(int experience)
-    {
-        stat.experience += experience;
+            if(stat.healthGrowth >= Random.Range(0, 99))
+            {
+                stat.health++;
+            }
+            if (stat.strengthGrowth >= Random.Range(0, 99))
+            {   
+                stat.strength++;
+            }
+            if (stat.magicGrowth >= Random.Range(0, 99))
+            {
+                stat.magic++;
+            }
+            if (stat.skillGrowth >= Random.Range(0, 99))
+            {
+                stat.skill++;
+            }
+            if (stat.defenseGrowth >= Random.Range(0, 99))
+            {
+                stat.defense++;
+            }
+            if (stat.resistenceGrowth >= Random.Range(0, 99))
+            {
+                stat.resistance++;
+            }
+            if (stat.staminaGrowth >= Random.Range(0, 99))
+            {
+                stat.stamina++;
+            }
+            if (stat.luckGrowth >= Random.Range(0, 99))
+            {
+                stat.luck++;
+            }
+            if (stat.speedGrowth >= Random.Range(0, 99))
+            {
+                stat.speed++;
+            }
+        }
     }
 }
