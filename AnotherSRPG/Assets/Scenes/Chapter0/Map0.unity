@@ -7233,7 +7233,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991886, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_TagString
-      value: Ranged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7090657975417367644, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -8177,7 +8177,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991886, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_TagString
-      value: Ranged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7090657975417367644, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -10389,6 +10389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f48714ef8d9d04cbd4ca59eef370fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   currentEnemy: {fileID: 1094234436}
   targetX: 0
   targetY: 0
@@ -12547,7 +12548,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991886, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_TagString
-      value: Ranged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7090657975417367644, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -14376,7 +14377,7 @@ MonoBehaviour:
   might: 5
   hit: 85
   crit: 20
-  range: 2
+  range: 1
 --- !u!1001 &1542913853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16638,7 +16639,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991886, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_TagString
-      value: Ranged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7090657975417367644, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
@@ -19479,7 +19480,7 @@ PrefabInstance:
     - target: {fileID: 297210538870397912, guid: 32dd223fd6937714b875c02aad3cb01c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 297210538870397912, guid: 32dd223fd6937714b875c02aad3cb01c,
         type: 3}
@@ -19580,7 +19581,7 @@ PrefabInstance:
     - target: {fileID: 4219236001221071638, guid: a9ba57a171c6d874a885b4ab63bbc0c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4219236001221071638, guid: a9ba57a171c6d874a885b4ab63bbc0c7,
         type: 3}
@@ -19743,7 +19744,7 @@ PrefabInstance:
     - target: {fileID: 5673569529789369515, guid: d705dfb3fd2faed4aa22994d9a297bcf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5673569529789369515, guid: d705dfb3fd2faed4aa22994d9a297bcf,
         type: 3}
@@ -19877,7 +19878,7 @@ PrefabInstance:
     - target: {fileID: 6797449150549991886, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
       propertyPath: m_TagString
-      value: Ranged
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7090657975417367644, guid: 0f21ad539a9e12a47895177c88496460,
         type: 3}
